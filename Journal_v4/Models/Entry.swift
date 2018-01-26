@@ -14,18 +14,18 @@ class Entry: Equatable, Codable {
     
     var title: String
     var body: String
-    var timeStamp = Date()
+    var timeStamp: String
     
-    // MARK:    Initializer
-    init(title: String, body: String) {
+    // MARK:    Initializers
+    init(title: String, body: String, timeStamp: String) {
         self.title = title
         self.body = body
+        self.timeStamp = timeStamp
     }
     
     // MARK:    Equatable Protocol
     static func == (lhs: Entry, rhs: Entry) -> Bool {
         return lhs.title == rhs.title &&
-        lhs.body == rhs.body &&
-        lhs.timeStamp == rhs.timeStamp
+        lhs.body == rhs.body
     }
 }
